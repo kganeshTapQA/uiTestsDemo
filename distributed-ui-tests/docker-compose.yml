@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+
+  hub:
+    image: selenium/hub:3.141.59
+    ports:
+      - 4444:4444
+
+  chrome:
+    image: selenium/node-chrome:3.141.59
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+
+  firefox:
+    image: selenium/node-firefox:3.141.59
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+      - NODE_MAX_INSTANCES=3
+      - NODE_MAX_SESSION=3
+
+  firefox:
+    image: selenium/node-firefox:3.141.59
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+
+  # chrome:
+  #   image: selenium/node-chrome-debug:3.14.0-helium
+  #   depends_on:
+  #     - selenium-hub
+  #   environment:
+  #     - HUB_HOST=selenium-hub
+  #     - HUB_PORT=4444
+  #     - SCREEN_WIDTH=1920
+  #     - SCREEN_HEIGHT=1080
+  #   ports:
+  #     - "5900:5900"
