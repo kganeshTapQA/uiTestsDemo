@@ -13,7 +13,7 @@ We will be creating a docker image that containerizes a static html website. In 
 2. enter `docker run -p 8080:80 demo:local`
   - open a web browser(_chrome_) and enter `localhost:8080`
 
-### Docker Python Test Demo
+### Docker UI Test Demo
 ----
 #### Containerized environments to run Parallel UI Tests on a grid with Chrome and Firefox.
 
